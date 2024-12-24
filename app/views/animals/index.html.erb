@@ -14,7 +14,7 @@
       <tr>
         <td><%= animal.id %></td>
         <td>
-          <%= link_to animal.name, '#' %>
+          <%= link_to animal.name, animal_path(animal), data: { turbo_frame: 'drawer' } %>
         </td>
         <td><%= animal.family %></td>
         <td>
@@ -24,3 +24,7 @@
     <% end %>
   </tbody>
 </table>
+
+<% if @animal.present? %>
+  <%= render 'drawer' %>
+<% end %>
