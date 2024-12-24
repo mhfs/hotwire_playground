@@ -1,0 +1,26 @@
+<h1>Animals</h1>
+
+<table class="animals-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Family</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @animals.each do |animal| %>
+      <tr>
+        <td><%= animal.id %></td>
+        <td>
+          <%= link_to animal.name, '#' %>
+        </td>
+        <td><%= animal.family %></td>
+        <td>
+          <%= link_to 'Edit', '#' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

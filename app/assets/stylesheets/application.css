@@ -8,3 +8,25 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+.animals-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 20px 0;
+}
+.animals-table th,
+.animals-table td {
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+}
+.animals-table th {
+	background-color: #f2f2f2;
+	font-weight: bold;
+}
+.animals-table tr:nth-child(even) {
+	background-color: #f9f9f9;
+}
+.animals-table tr:hover {
+	background-color: #f1f1f1;
+}
