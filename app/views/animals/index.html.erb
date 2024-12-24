@@ -25,7 +25,7 @@
   </tbody>
 </table>
 
-<%= turbo_frame_tag "drawer" do %>
+<%= turbo_frame_tag "drawer", data: { turbo_action: 'advance' } do %>
   <% if @animal.present? %>
     <%= render 'drawer' %>
   <% end %>
