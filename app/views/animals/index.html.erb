@@ -25,6 +25,8 @@
   </tbody>
 </table>
 
-<% if @animal.present? %>
-  <%= render 'drawer' %>
+<%= turbo_frame_tag "drawer" do %>
+  <% if @animal.present? %>
+    <%= render 'drawer' %>
+  <% end %>
 <% end %>
