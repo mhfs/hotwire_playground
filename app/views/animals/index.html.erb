@@ -27,16 +27,4 @@
   </tbody>
 </table>
 
-<%= turbo_frame_tag "drawer", data: { turbo_action: 'advance' } do %>
-  <% if @animal.present? %>
-    <% if @edit %>
-      <%= render DrawerComponent.new(title: 'Edit Animal') do %>
-        <div>FORM COMING SOON</div>
-      <% end %>
-    <% else %>
-      <%= render DrawerComponent.new(title: 'Animal Details') do %>
-        <%= render 'animal' %>
-      <% end %>
-    <% end %>
-  <% end %>
-<% end %>
+<%= render "drawer" %>

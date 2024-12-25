@@ -5,7 +5,7 @@ class AnimalsController < ApplicationController
     @edit = params[:option] == "edit"
 
     if turbo_frame_request?
-      render :show
+      render :drawer
     else
       render :index
     end
