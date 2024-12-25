@@ -19,3 +19,4 @@ Requirements:
 - [x] Close drawer via X link that returns the previous URL without reloading.
 
 Known Issues:
+- [ ] Drawer close with window.history.back breaks when opening drawer via link.
