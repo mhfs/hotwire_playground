@@ -2,6 +2,7 @@ import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
   close() {
-    this.element.remove(); // Remove the drawer from the DOM
+    this.element.remove();
+    window.history.back();
   }
 }
