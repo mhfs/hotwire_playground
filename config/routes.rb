@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   get "animals" => "animals#index", as: :animals
-  get "animals/:id" => "animals#index", as: :animal
+  get "animals/:id(/:option)" => "animals#index", as: :animal
 
   # Defines the root path route ("/")
   root "animals#index"

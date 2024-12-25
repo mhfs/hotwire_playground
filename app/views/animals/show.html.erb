@@ -1,5 +1,11 @@
 <%= turbo_frame_tag 'drawer' do %>
-  <%= render DrawerComponent.new(title: 'Animal Details') do %>
-    <%= render 'animal' %>
+  <% if @edit %>
+    <%= render DrawerComponent.new(title: 'Edit Animal') do %>
+      <div>FORM COMING SOON</div>
+    <% end %>
+  <% else %>
+    <%= render DrawerComponent.new(title: 'Animal Details') do %>
+      <%= render 'animal' %>
+    <% end %>
   <% end %>
 <% end %>

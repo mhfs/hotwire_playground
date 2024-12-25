@@ -20,7 +20,7 @@
         </td>
         <td><%= animal.family %></td>
         <td>
-          <%= link_to 'Edit', '#' %>
+          <%= link_to 'Edit', animal_path(animal, option: :edit), data: { turbo_frame: 'drawer' } %>
         </td>
       </tr>
     <% end %>
@@ -29,8 +29,14 @@
 
 <%= turbo_frame_tag "drawer", data: { turbo_action: 'advance' } do %>
   <% if @animal.present? %>
-    <%= render DrawerComponent.new(title: 'Animal Details') do %>
-      <%= render 'animal' %>
+    <% if @edit %>
+      <%= render DrawerComponent.new(title: 'Edit Animal') do %>
+        <div>FORM COMING SOON</div>
+      <% end %>
+    <% else %>
+      <%= render DrawerComponent.new(title: 'Animal Details') do %>
+        <%= render 'animal' %>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>
