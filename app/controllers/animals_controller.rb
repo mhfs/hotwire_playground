@@ -4,7 +4,7 @@ class AnimalsController < ApplicationController
     @animal = Animal.find(params[:id]) if params[:id]
 
     if turbo_frame_request?
-      render :show, layout: false
+      render :show
     else
       render :index
     end
