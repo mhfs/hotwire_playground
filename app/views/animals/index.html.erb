@@ -29,6 +29,8 @@
 
 <%= turbo_frame_tag "drawer", data: { turbo_action: 'advance' } do %>
   <% if @animal.present? %>
-    <%= render 'drawer' %>
+    <%= render DrawerComponent.new(title: 'Animal Details') do %>
+      <%= render 'animal' %>
+    <% end %>
   <% end %>
 <% end %>

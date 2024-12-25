@@ -1,3 +1,5 @@
 <%= turbo_frame_tag 'drawer' do %>
-  <%= render 'drawer' %>
+  <%= render DrawerComponent.new(title: 'Animal Details') do %>
+    <%= render 'animal' %>
+  <% end %>
 <% end %>

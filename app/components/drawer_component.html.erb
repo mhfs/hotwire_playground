@@ -3,10 +3,8 @@
   <div class="drawer">
     <div class="drawer-content">
       <button class="close-button" data-action="click->drawer#close">&times;</button>
-      <h2>Animal Details</h2>
-      <p><strong>ID:</strong> <%= @animal.id %></p>
-      <p><strong>Name:</strong> <%= @animal.name %></p>
-      <p><strong>Family:</strong> <%= @animal.family %></p>
+      <h2><%= @title %></h2>
+      <%= content %>
     </div>
   </div>
 </div>
