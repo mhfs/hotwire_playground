@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get "animals" => "animals#index", as: :animals
   get "animals/:id(/:option)" => "animals#index", as: :animal
+  patch "animals/:id" => "animals#update"
 
   # Defines the root path route ("/")
   root "animals#index"

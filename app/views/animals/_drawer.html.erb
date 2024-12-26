@@ -2,7 +2,7 @@
   <% if @animal.present? %>
     <% if @edit %>
       <%= render DrawerComponent.new(title: 'Edit Animal') do %>
-        <div>FORM COMING SOON</div>
+        <%= render 'form' %>
       <% end %>
     <% else %>
       <%= render DrawerComponent.new(title: 'Animal Details') do %>

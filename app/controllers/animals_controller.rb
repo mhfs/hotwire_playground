@@ -10,4 +10,21 @@ class AnimalsController < ApplicationController
       render :index
     end
   end
+
+  def update
+    @animal = Animal.find(params[:id])
+    @edit = true
+
+    if @animal.update(animal_params)
+      redirect_to animals_path, notice: "Animal was successfully updated."
+    else
+      render :drawer, status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  def animal_params
+    params.require(:animal).permit(:name, :family)
+  end
 end
