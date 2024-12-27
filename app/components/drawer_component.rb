@@ -6,4 +6,12 @@ class DrawerComponent < ViewComponent::Base
   def initialize(title:)
     @title = title
   end
+
+  def wrap_in_turbo_frame(&block)
+    if helpers.turbo_frame_request?
+      turbo_frame_tag "drawer", data: { turbo_action: "advance" }, &block
+    else
+      yield
+    end
+  end
 end

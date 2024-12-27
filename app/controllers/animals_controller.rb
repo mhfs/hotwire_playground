@@ -32,7 +32,8 @@ class AnimalsController < ApplicationController
       render(
         DrawerComponent.new(title: "Edit Animal")
                        .with_content(render_to_string(partial: "form")),
-        status: :unprocessable_entity
+        status: :unprocessable_entity,
+        content_type: "text/html"
       )
     end
   end

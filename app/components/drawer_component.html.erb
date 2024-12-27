@@ -1,4 +1,4 @@
-<%= turbo_frame_tag "drawer", data: { turbo_action: 'advance' } do %>
+<%= wrap_in_turbo_frame do %>
   <div data-controller="drawer">
     <div class="overlay" data-action="click->drawer#close"></div>
     <div class="drawer">

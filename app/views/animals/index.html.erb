@@ -28,7 +28,7 @@
 </table>
 
 <% if @animal.present? %>
-  <%= content_for_drawer do %>
+  <% content_for_drawer do %>
     <% if @edit %>
       <%= render DrawerComponent.new(title: 'Edit Animal') do %>
         <%= render 'form' %>
