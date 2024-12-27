@@ -5,6 +5,18 @@
   </head>
 
   <body>
+    <% if flash.any? %>
+      <div class="alerts">
+        <% flash.each do |type, message| %>
+          <div class="alert <%= "alert-#{type}" %>">
+            <%= message %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+
     <%= yield %>
+
+    <%= drawer_frame %>
   </body>
 </html>

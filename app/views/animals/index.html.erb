@@ -16,15 +16,27 @@
       <tr>
         <td><%= animal.id %></td>
         <td>
-          <%= link_to animal.name, animal_path(animal), data: { turbo_frame: 'drawer' } %>
+          <%= link_to_drawer animal.name, animal_path(animal) %>
         </td>
         <td><%= animal.family %></td>
         <td>
-          <%= link_to 'Edit', animal_path(animal, option: :edit), data: { turbo_frame: 'drawer' } %>
+          <%= link_to_drawer 'Edit', animal_path(animal, option: :edit) %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= render "drawer" %>
+<% if @animal.present? %>
+  <%= content_for_drawer do %>
+    <% if @edit %>
+      <%= render DrawerComponent.new(title: 'Edit Animal') do %>
+        <%= render 'form' %>
+      <% end %>
+    <% else %>
+      <%= render DrawerComponent.new(title: 'Animal Details') do %>
+        <%= render 'animal' %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

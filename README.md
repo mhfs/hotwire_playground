@@ -24,3 +24,4 @@ Known Issues:
 - [ ] Drawer close with window.history.back breaks when opening drawer via link.
 - [ ] No user feedback when drawer is opening and taking too long.
 - [ ] Back button when oppening a drawer from link does not work. Can we deduce where to default to?
+- [ ] Redirect on animals#update is not working due to missing frame

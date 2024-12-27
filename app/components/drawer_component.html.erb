@@ -1,10 +1,12 @@
-<div data-controller="drawer">
-  <div class="overlay" data-action="click->drawer#close"></div>
-  <div class="drawer">
-    <div class="drawer-content">
-      <button class="close-button" data-action="click->drawer#close">&times;</button>
-      <h2><%= @title %></h2>
-      <%= content %>
+<%= turbo_frame_tag "drawer", data: { turbo_action: 'advance' } do %>
+  <div data-controller="drawer">
+    <div class="overlay" data-action="click->drawer#close"></div>
+    <div class="drawer">
+      <div class="drawer-content">
+        <button class="close-button" data-action="click->drawer#close">&times;</button>
+        <h2><%= @title %></h2>
+        <%= content %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
