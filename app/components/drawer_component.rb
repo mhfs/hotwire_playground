@@ -9,7 +9,7 @@ class DrawerComponent < ViewComponent::Base
 
   def wrap_in_turbo_frame(&block)
     if helpers.turbo_frame_request?
-      turbo_frame_tag "drawer", data: { turbo_action: "advance" }, &block
+      turbo_frame_tag "drawer-frame", &block
     else
       yield
     end

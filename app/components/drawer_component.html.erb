@@ -1,12 +1,9 @@
 <%= wrap_in_turbo_frame do %>
   <div data-controller="drawer">
-    <div class="overlay" data-action="click->drawer#close"></div>
-    <div class="drawer">
-      <div class="drawer-content">
-        <button class="close-button" data-action="click->drawer#close">&times;</button>
-        <h2><%= @title %></h2>
-        <%= content %>
-      </div>
+    <div class="drawer-content">
+      <button class="close-button" data-action="click->drawer#close">&times;</button>
+      <h2><%= @title %></h2>
+      <%= content %>
     </div>
   </div>
 <% end %>

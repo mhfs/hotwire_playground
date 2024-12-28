@@ -16,8 +16,16 @@ export default class extends Controller {
   };
 
   close() {
-    console.log('close drawer');
-    this.element.remove();
-    window.history.back();
+    // Finds the frame created by the drawer manager.
+    let container = this.element.closest('.drawer-container')
+
+    // Fetch the previous URL injected by the drawer manager.
+    let previousUrl = container.dataset.drawerPreviousUrl;
+
+    // Restore the URL to its state before the drawer was opened.
+    if (previousUrl) window.history.pushState({}, null, previousUrl);
+
+    // Remove everything from the DOM.
+    container.remove();
   }
 }

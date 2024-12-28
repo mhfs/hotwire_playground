@@ -1,0 +1,8 @@
+<div class="drawer-container" data-controller="drawer">
+  <div class="overlay" data-action="click->drawer#close"></div>
+  <div class="drawer">
+    <%= turbo_frame_tag 'drawer-frame' do %>
+      <p>Loading ...</p>
+    <% end %>
+  </div>
+</div>
