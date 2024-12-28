@@ -18,10 +18,10 @@ export default class extends Controller {
 
   initDrawerFrame() {
     // Clone the drawer frame template
-    let content = document.querySelector('template#drawer-frame-template').content.cloneNode(true);
+    let content = document.querySelector('template#drawer-template').content.cloneNode(true);
 
     // Pass the previous URL to the drawer for the inner controller to use on close
-    let container = content.querySelector('.drawer-container');
+    let container = content.querySelector('.drawer');
     container.dataset.drawerPreviousUrl = this.previousUrl;
 
     // If advance was set on the link, set the turbo-frame to advance

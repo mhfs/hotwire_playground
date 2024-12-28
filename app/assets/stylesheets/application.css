@@ -31,7 +31,7 @@
   background-color: #f1f1f1;
 }
 
-.drawer {
+.drawer .body {
   position: fixed;
   top: 0;
   right: 0;
@@ -44,14 +44,14 @@
   overflow-y: auto; /* Ensures content is scrollable if needed */
 }
 
-.drawer-content {
+.drawer .content {
   display: flex;
   flex-direction: column;
   gap: 10px;
   position: relative;
 }
 
-.close-button {
+.drawer .close-button {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -63,10 +63,11 @@
   cursor: pointer;
 }
 
-.close-button:hover {
+.drawer .close-button:hover {
   color: #000;
 }
-.overlay {
+
+.drawer .overlay {
   position: fixed;
   top: 0;
   left: 0;

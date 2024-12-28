@@ -17,7 +17,7 @@ export default class extends Controller {
 
   close() {
     // Finds the frame created by the drawer manager.
-    let container = this.element.closest('.drawer-container')
+    let container = this.element.closest('.drawer')
 
     // Fetch the previous URL injected by the drawer manager.
     let previousUrl = container.dataset.drawerPreviousUrl;
