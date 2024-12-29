@@ -28,15 +28,13 @@
 </table>
 
 <% if @animal.present? %>
-  <% content_for_drawer do %>
-    <% if @edit %>
-      <%= render DrawerComponent.new(title: 'Edit Animal') do %>
-        <%= render 'form' %>
-      <% end %>
-    <% else %>
-      <%= render DrawerComponent.new(title: 'Animal Details') do %>
-        <%= render 'animal' %>
-      <% end %>
+  <% if @edit %>
+    <%= render DrawerFrameComponent.new do %>
+      <%= render AnimalFormDrawerComponent.new(animal: @animal) %>
+    <% end %>
+  <% else %>
+    <%= render DrawerFrameComponent.new do %>
+      <%= render AnimalDrawerComponent.new(animal: @animal) %>
     <% end %>
   <% end %>
 <% end %>

@@ -2,7 +2,11 @@
   <div class="overlay" data-action="click->drawer#close"></div>
   <div class="body">
     <%= turbo_frame_tag 'drawer-frame' do %>
-      <p>Loading ...</p>
+      <% if content.present? %>
+        <%= content %>
+      <% else %>
+        <p>Loading ...</p>
+      <% end %>
     <% end %>
   </div>
 </div>
