@@ -1,6 +1,10 @@
 import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
+  static values = {
+    previousUrl: String
+  }
+
   connect() {
     document.addEventListener("keydown", this.handleKeydown);
   }
@@ -19,11 +23,8 @@ export default class extends Controller {
     // Finds the frame created by the drawer manager.
     let container = this.element.closest('.drawer')
 
-    // Fetch the previous URL injected by the drawer manager.
-    let previousUrl = container.dataset.drawerPreviousUrl;
-
     // Restore the URL to its state before the drawer was opened.
-    if (previousUrl) window.history.pushState({}, null, previousUrl);
+    if (this.previousUrlValue) window.history.pushState({}, null, this.previousUrlValue);
 
     // Remove everything from the DOM.
     container.remove();

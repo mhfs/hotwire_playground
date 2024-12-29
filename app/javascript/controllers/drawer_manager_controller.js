@@ -5,11 +5,6 @@ export default class extends Controller {
     advance: Boolean
   };
 
-  initialize() {
-    // Store the current url when the link to the drawer is rendered.
-    this.previousUrl = window.location.href;
-  }
-
   open(e) {
     // Prevent the link navigation as we're going to handle it with Turbo below.
     e.preventDefault();
@@ -22,7 +17,8 @@ export default class extends Controller {
 
     // Pass the previous URL to the drawer for the inner controller to use on close
     let container = content.querySelector('.drawer');
-    container.dataset.drawerPreviousUrl = this.previousUrl;
+    let previousUrl = window.location.pathname + window.location.search;
+    container.dataset.drawerPreviousUrlValue = previousUrl;
 
     // If advance was set on the link, set the turbo-frame to advance
     if (this.advanceValue) {
