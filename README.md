@@ -22,8 +22,9 @@ Requirements:
 
 Known Issues:
 - [x] No user feedback when drawer is opening and taking too long.
-- [ ] Drawer close with window.history.back breaks when opening drawer via link.
+- [x] Drawer close with window.history.back breaks when opening drawer via link.
     - Can we deduce where to default to?
     - Maybe detect by the lack of previous URL?
-- [ ] Redirect on animals#update is not working due to missing frame.
 - [x] "</div> </div>" bug when reloading with open drawer.
+- [ ] Redirect on animals#update is not working due to missing frame.
+- [ ] Would it make sense to have a single controller instead of two?
