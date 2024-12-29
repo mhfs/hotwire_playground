@@ -20,7 +20,7 @@
         </td>
         <td><%= animal.family %></td>
         <td>
-          <%= link_to_drawer 'Edit', animal_path(animal, option: :edit) %>
+          <%= link_to_drawer 'Edit', animal_path(animal, option: :edit), advance: true %>
         </td>
       </tr>
     <% end %>

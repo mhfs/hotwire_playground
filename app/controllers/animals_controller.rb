@@ -24,8 +24,7 @@ class AnimalsController < ApplicationController
       redirect_to animals_path, notice: "Animal was successfully updated."
     else
       render(
-        DrawerComponent.new(title: "Edit Animal")
-                       .with_content(render_to_string(partial: "form")),
+        AnimalFormDrawerComponent.new(animal: @animal),
         status: :unprocessable_entity,
         content_type: "text/html"
       )
