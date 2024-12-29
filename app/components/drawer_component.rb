@@ -11,7 +11,7 @@ class DrawerComponent < ViewComponent::Base
     if helpers.turbo_frame_request?
       turbo_frame_tag "drawer-frame", &block
     else
-      yield
+      capture(&block)
     end
   end
 end

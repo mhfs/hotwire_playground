@@ -18,10 +18,4 @@ module DrawerHelper
       link_to(label, path, options)
     end
   end
-
-  def content_for_drawer
-    content_for(:drawer) do
-      yield
-    end
-  end
 end

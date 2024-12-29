@@ -26,4 +26,4 @@ Known Issues:
     - Can we deduce where to default to?
     - Maybe detect by the lack of previous URL?
 - [ ] Redirect on animals#update is not working due to missing frame.
-- [ ] "</div> </div>" bug when reloading with open drawer.
+- [x] "</div> </div>" bug when reloading with open drawer.
