@@ -2,11 +2,11 @@ module DrawerHelper
   def link_to_drawer(*args, &block)
     options = args.extract_options!.dup
     options[:data] ||= {}
-    options[:data][:controller] ||= "drawer-manager"
-    options[:data][:action] ||= "click->drawer-manager#open"
+    options[:data][:controller] ||= "drawer-trigger"
+    options[:data][:action] ||= "click->drawer-trigger#open"
 
     if options[:advance]
-      options[:data][:'drawer-manager-advance-value'] = "true"
+      options[:data][:'drawer-trigger-advance-value'] = "true"
     end
 
     if block_given?
