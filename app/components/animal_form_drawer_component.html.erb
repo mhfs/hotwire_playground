@@ -1,0 +1,28 @@
+<%= render DrawerComponent.new(title: "Edit Animal") do %>
+  <%= form_with(model: @animal) do |form| %>
+    <% if @animal.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@animal.errors.count, "error") %> prohibited this animal from being saved:</h2>
+        <ul>
+          <% @animal.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= form.label :family %>
+      <%= form.select :family, Animal.families.keys.map { |key| [key.humanize, key] }, prompt: 'Select a family' %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+<% end %>

@@ -6,15 +6,9 @@ class AnimalsController < ApplicationController
 
     if @animal && turbo_frame_request?
       if @edit
-        render(
-          DrawerComponent.new(title: "Edit Animal")
-                         .with_content(render_to_string(partial: "form"))
-        )
+        render(AnimalFormDrawerComponent.new(animal: @animal))
       else
-        render(
-          DrawerComponent.new(title: "Animal Details")
-                         .with_content(render_to_string(partial: "animal"))
-        )
+        render(AnimalDrawerComponent.new(animal: @animal))
       end
 
       return
