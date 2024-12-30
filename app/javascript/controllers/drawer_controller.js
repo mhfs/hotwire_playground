@@ -19,7 +19,15 @@ export default class extends Controller {
     }
   };
 
+  setConfirmation(e) {
+    this.confirmation = true;
+  }
+
   close() {
+    if (this.confirmation === true && !confirm("Are you sure you want to close?")) {
+      return;
+    }
+
     // Finds the frame created by the drawer manager.
     let container = this.element.closest('.drawer')
 

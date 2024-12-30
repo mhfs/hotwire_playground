@@ -1,5 +1,5 @@
 <%= render DrawerComponent.new(title: "Edit Animal", previous_url: animals_path) do %>
-  <%= form_with(model: @animal) do |form| %>
+  <%= form_with(model: @animal, data: { action: 'input->drawer#setConfirmation' }) do |form| %>
     <% if @animal.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@animal.errors.count, "error") %> prohibited this animal from being saved:</h2>

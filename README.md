@@ -19,12 +19,16 @@ Requirements:
 - [x] Close drawer via X link that returns the previous URL without reloading.
 - [x] Close drawer on ESC.
 - [ ] Require confirmation before closing.
+  - Customizable confirmation message.
+  - Outlet for further control over confirmation requirement.
+  - Use a prettier dialog?
+- [ ] Slot based drawer content (header/body/footer).
+- [ ] Animation on drawer trigger (but not on page load).
+- [ ] Make in-drawer form functional.
+  - Do we need an custom stream action to close the drawer?
 
 Known Issues:
 - [x] No user feedback when drawer is opening and taking too long.
 - [x] Drawer close with window.history.back breaks when opening drawer via link.
-    - Can we deduce where to default to?
-    - Maybe detect by the lack of previous URL?
 - [x] "</div> </div>" bug when reloading with open drawer.
-- [ ] Redirect on animals#update is not working due to missing frame.
 - [ ] Would it make sense to have a single controller instead of two?
