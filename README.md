@@ -26,6 +26,7 @@ Requirements:
 - [ ] Animation on drawer trigger (but not on page load).
 - [ ] Make in-drawer form functional.
   - Do we need an custom stream action to close the drawer?
+- [ ] Make drawer resizable.
 
 Known Issues:
 - [x] No user feedback when drawer is opening and taking too long.
