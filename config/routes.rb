@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   get "animals" => "animals#index", as: :animals
-  get "animals/:id(/:option)" => "animals#index", as: :animal
+  get "animals/:id(/:option)" => "animals#index", as: :animal, constraints: ->(req) { req.headers["Turbo-Frame"].blank? }
+  get "animals/:id(/:option)" => "animals#drawer", constraints: ->(req) { req.headers["Turbo-Frame"].present? }
   patch "animals/:id" => "animals#update"
 
   # Defines the root path route ("/")
