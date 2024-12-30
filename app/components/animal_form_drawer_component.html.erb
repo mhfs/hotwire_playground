@@ -1,4 +1,4 @@
-<%= render DrawerComponent.new(title: "Edit Animal") do %>
+<%= render DrawerComponent.new(title: "Edit Animal", previous_url: animals_path) do %>
   <%= form_with(model: @animal) do |form| %>
     <% if @animal.errors.any? %>
       <div id="error_explanation">
