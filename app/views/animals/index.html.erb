@@ -29,12 +29,8 @@
 
 <% if @animal.present? %>
   <% if @edit %>
-    <%= render DrawerFrameComponent.new(previous_url: animals_path) do %>
-      <%= render AnimalFormDrawerComponent.new(animal: @animal) %>
-    <% end %>
+    <%= render AnimalFormDrawerComponent.new(animal: @animal) %>
   <% else %>
-    <%= render DrawerFrameComponent.new(previous_url: animals_path) do %>
-      <%= render AnimalDrawerComponent.new(animal: @animal) %>
-    <% end %>
+    <%= render AnimalDrawerComponent.new(animal: @animal) %>
   <% end %>
 <% end %>

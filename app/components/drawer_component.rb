@@ -11,7 +11,9 @@ class DrawerComponent < ViewComponent::Base
     if helpers.turbo_frame_request?
       turbo_frame_tag "drawer-frame", &block
     else
-      capture(&block)
+      render DrawerFrameComponent.new(previous_url: animals_path) do
+        capture(&block)
+      end
     end
   end
 end
