@@ -19,14 +19,20 @@ Requirements:
 - [x] Close drawer via X link that returns the previous URL without reloading.
 - [x] Close drawer on ESC.
 - [ ] Require confirmation before closing.
+  - Add confirm as a option to the drawer component.
   - Customizable confirmation message.
   - Outlet for further control over confirmation requirement.
   - Use a prettier dialog?
 - [ ] Slot based drawer content (header/body/footer).
-- [ ] Animation on drawer trigger (but not on page load).
 - [ ] Make in-drawer form functional.
   - Do we need an custom stream action to close the drawer?
+  - Probably turbo stream?
+- [ ] Make drawer unique on trigger and set unique identifier.
+- [ ] Add 'new' form with advance false.
+--- Ready for real world use ---
+- [ ] Animation on drawer trigger (but not on page load).
 - [ ] Make drawer resizable.
+- [ ] Choose drawer size on trigger (small, medium, large).
 
 Known Issues:
 - [x] No user feedback when drawer is opening and taking too long.
