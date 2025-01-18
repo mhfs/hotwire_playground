@@ -2,7 +2,8 @@ import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
   static values = {
-    advance: Boolean
+    advance: Boolean,
+    size: String,
   };
 
   open(e) {
@@ -31,6 +32,11 @@ export default class extends Controller {
       // Use replace instead of advance because we already pushed on `open` above.
       frame.dataset.turboAction = 'replace';
     }
+
+    // add size class to the .body selector inside the drawer
+    let body = content.querySelector('.body');
+    body.classList.remove('small', 'medium', 'large');
+    body.classList.add(this.sizeValue);
 
     // Append the drawer to the body with the loading state so that user
     // has immediate feedback on the click.

@@ -36,7 +36,7 @@ export default class extends Controller {
 
     // Apply min/max constraints
     const minWidth = 300
-    const maxWidth = window.innerWidth * 0.8
+    const maxWidth = Math.min(window.innerWidth * 0.8, 800)
 
     if (newWidth >= minWidth && newWidth <= maxWidth) {
       this.bodyTarget.style.width = `${newWidth}px`

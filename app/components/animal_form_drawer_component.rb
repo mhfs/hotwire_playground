@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 class AnimalFormDrawerComponent < ViewComponent::Base
-  def initialize(animal:)
+  def initialize(animal:, size: :medium)
     @animal = animal
+    @size = size
   end
 
   def title

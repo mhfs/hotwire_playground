@@ -2,7 +2,7 @@
      data-controller="drawer drawer-resize"
      data-drawer-previous-url-value="<%= @previous_url %>">
   <div class="overlay" data-action="click->drawer#close"></div>
-  <div class="body" data-drawer-resize-target="body">
+  <div class="body <%= @size %>" data-drawer-resize-target="body">
     <div class="resize-handle"
          data-drawer-resize-target="handle"
          data-action="mousedown->drawer-resize#startResize"></div>

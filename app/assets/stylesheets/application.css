@@ -35,7 +35,6 @@
   position: fixed;
   top: 0;
   right: 0;
-  width: 30%; /* Takes up 25% of the screen width */
   height: 100%; /* Full height of the screen */
   background-color: #fff;
   box-shadow: -12px 0 15px rgba(0, 0, 0, 0.2);
@@ -46,6 +45,18 @@
   min-width: 300px; /* Minimum width */
   max-width: 80%; /* Maximum width */
   resize: horizontal; /* Enable horizontal resizing */
+}
+
+.drawer .body.small {
+  width: 300px;
+}
+
+.drawer .body.medium {
+  width: 500px;
+}
+
+.drawer .body.large {
+  width: 800px;
 }
 
 .drawer .resize-handle {
