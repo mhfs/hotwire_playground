@@ -29,6 +29,7 @@ Requirements:
   - Probably turbo stream?
 - [ ] Make drawer unique on trigger and set unique identifier.
 - [ ] Add 'new' form with advance false.
+  -  [x] Introduce link and form.
 --- Ready for real world use ---
 - [ ] Animation on drawer trigger (but not on page load).
 - [ ] Make drawer resizable.
@@ -38,4 +39,3 @@ Known Issues:
 - [x] No user feedback when drawer is opening and taking too long.
 - [x] Drawer close with window.history.back breaks when opening drawer via link.
 - [x] "</div> </div>" bug when reloading with open drawer.
-- [ ] Would it make sense to have a single controller instead of two?

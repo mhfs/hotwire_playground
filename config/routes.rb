@@ -11,8 +11,9 @@ Rails.application.routes.draw do
 
   get "animals" => "animals#index", as: :animals
   get "animals/:id(/:option)" => "animals#index", as: :animal, constraints: ->(req) { req.headers["Turbo-Frame"].blank? }
-  get "animals/:id/edit" => "animals#edit", constraints: ->(req) { req.headers["Turbo-Frame"].present? }
-  get "animals/:id" => "animals#show", constraints: ->(req) { req.headers["Turbo-Frame"].present? }
+  get "animals/new" => "animals#new", as: :new_animal
+  get "animals/:id/edit" => "animals#edit"
+  get "animals/:id" => "animals#show"
   patch "animals/:id" => "animals#update"
 
   # Defines the root path route ("/")

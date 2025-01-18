@@ -12,6 +12,11 @@ class AnimalsController < ApplicationController
     render(AnimalDrawerComponent.new(animal: @animal))
   end
 
+  def new
+    @animal = Animal.new
+    render(AnimalFormDrawerComponent.new(animal: @animal))
+  end
+
   def edit
     render(AnimalFormDrawerComponent.new(animal: @animal))
   end

@@ -1,4 +1,4 @@
-<%= render DrawerComponent.new(title: "Edit Animal", previous_url: animals_path) do %>
+<%= render DrawerComponent.new(title: title, previous_url: animals_path) do %>
   <%= form_with(model: @animal, data: { action: 'input->drawer#setConfirmation' }) do |form| %>
     <% if @animal.errors.any? %>
       <div id="error_explanation">
