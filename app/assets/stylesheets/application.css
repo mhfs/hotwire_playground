@@ -42,6 +42,32 @@
   z-index: 1000;
   padding: 20px;
   overflow-y: auto; /* Ensures content is scrollable if needed */
+
+  min-width: 300px; /* Minimum width */
+  max-width: 80%; /* Maximum width */
+  resize: horizontal; /* Enable horizontal resizing */
+}
+
+.drawer .resize-handle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  cursor: ew-resize;
+  background-color: #e0e0e0;
+  transition: background-color 0.2s;
+}
+
+.drawer .resize-handle:hover,
+.drawer .resize-handle.resizing {
+  background-color: #2196f3;
+}
+
+/* Prevent text selection while resizing */
+.drawer.resizing {
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .drawer .content {

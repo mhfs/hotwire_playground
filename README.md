@@ -32,7 +32,7 @@ Requirements:
   -  [x] Introduce link and form.
 --- Ready for real world use ---
 - [ ] Animation on drawer trigger (but not on page load).
-- [ ] Make drawer resizable.
+- [x] Make drawer resizable.
 - [ ] Choose drawer size on trigger (small, medium, large).
 
 Known Issues:
