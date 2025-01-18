@@ -1,20 +1,19 @@
 class AnimalsController < ApplicationController
-  before_action :set_animal, only: %i[index drawer update]
+  before_action :set_animal, only: %i[index show edit update]
 
   def index
     @animals = Animal.order(:name).all
+    @edit = params[:option] == "edit"
 
     render :index
   end
 
-  def drawer
-    if @animal && turbo_frame_request?
-      if @edit
-        render(AnimalFormDrawerComponent.new(animal: @animal))
-      else
-        render(AnimalDrawerComponent.new(animal: @animal))
-      end
-    end
+  def show
+    render(AnimalDrawerComponent.new(animal: @animal))
+  end
+
+  def edit
+    render(AnimalFormDrawerComponent.new(animal: @animal))
   end
 
   def update
@@ -33,7 +32,6 @@ class AnimalsController < ApplicationController
 
   def set_animal
     @animal = Animal.find(params[:id]) if params[:id]
-    @edit = params[:option] == "edit"
   end
 
   def animal_params
