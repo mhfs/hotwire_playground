@@ -25,15 +25,14 @@ Requirements:
   - Use a prettier dialog?
 - [ ] Slot based drawer content (header/body/footer).
 - [ ] Make in-drawer form functional.
+  - Both new/edit.
   - Do we need an custom stream action to close the drawer?
   - Probably turbo stream?
 - [ ] Make drawer unique on trigger and set unique identifier.
-- [ ] Add 'new' form with advance false.
-  -  [x] Introduce link and form.
 --- Ready for real world use ---
 - [ ] Animation on drawer trigger (but not on page load).
 - [x] Make drawer resizable.
-- [ ] Choose drawer size on trigger (small, medium, large).
+- [x] Choose drawer size on trigger (small, medium, large).
 
 Known Issues:
 - [x] No user feedback when drawer is opening and taking too long.
