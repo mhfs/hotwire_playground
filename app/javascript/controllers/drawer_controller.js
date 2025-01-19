@@ -23,6 +23,10 @@ export default class extends Controller {
     this.confirmation = true;
   }
 
+  resetConfirmation(e) {
+    this.confirmation = false;
+  }
+
   close() {
     if (this.confirmation === true && !confirm("Are you sure you want to close?")) {
       return;

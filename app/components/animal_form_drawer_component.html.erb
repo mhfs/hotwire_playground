@@ -1,5 +1,10 @@
 <%= render DrawerComponent.new(title: title, size: @size, previous_url: animals_path) do %>
-  <%= form_with(model: @animal, data: { action: 'input->drawer#setConfirmation' }) do |form| %>
+  <%= form_with(model: @animal,
+                data: {
+                  controller: 'animal-form',
+                  'animal-form-drawer-outlet': '.drawer',
+                  action: 'input->drawer#setConfirmation'
+                }) do |form| %>
     <% if @animal.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@animal.errors.count, "error") %> prohibited this animal from being saved:</h2>
@@ -20,6 +25,18 @@
       <%= form.label :family %>
       <%= form.select :family, Animal.families.keys.map { |key| [key.humanize, key] }, prompt: 'Select a family' %>
     </div>
+
+    <div>
+      <a href="#" data-action="click->animal-form#requireConfirmation" class="btn btn-primary">
+        Click here to require confirmation!
+      </a>
+    </div>
+    <div>
+      <a href="#" data-action="click->animal-form#cancelConfirmation" class="btn btn-primary">
+        Click here to cancel confirmation!
+      </a>
+    </div>
+    <div>
 
     <div class="actions">
       <%= form.submit %>
