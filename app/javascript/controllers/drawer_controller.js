@@ -7,6 +7,10 @@ export default class extends Controller {
     confirmMessage: String
   }
 
+  initialize() {
+    this.handleKeydown = this.handleKeydown.bind(this);
+  }
+
   connect() {
     document.addEventListener("keydown", this.handleKeydown);
     this.confirmation = this.confirmValue;
@@ -16,11 +20,12 @@ export default class extends Controller {
     document.removeEventListener("keydown", this.handleKeydown);
   }
 
-  handleKeydown = (event) => {
+  handleKeydown(event) {
+    event.preventDefault();
     if (event.key === "Escape" || event.keyCode === 27) {
       this.close();
     }
-  };
+  }
 
   setConfirmation(e) {
     this.confirmation = true;

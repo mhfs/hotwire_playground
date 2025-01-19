@@ -23,7 +23,7 @@ Requirements:
   - [x] Customizable confirmation message.
   - [x] Outlet for further control over confirmation requirement.
   - [x] Use a custom dialog instead of browser confirm.
-- [ ] Slot based drawer content (header/body/footer).
+- [x] Slot based drawer content (header/body/footer).
 - [ ] Make in-drawer form functional.
   - Both new/edit.
   - Do we need an custom stream action to close the drawer?
