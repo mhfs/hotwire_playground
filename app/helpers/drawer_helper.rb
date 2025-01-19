@@ -5,6 +5,8 @@ module DrawerHelper
     options[:data][:controller] ||= "drawer-trigger"
     options[:data][:action] ||= "click->drawer-trigger#open"
     options[:data][:'drawer-trigger-size-value'] = options[:size] || "medium"
+    options[:data][:'drawer-trigger-confirm-value'] = options[:confirm] || false
+    options[:data][:'drawer-trigger-confirm-message-value'] = options[:confirm_message]
 
     if options[:advance]
       options[:data][:'drawer-trigger-advance-value'] = "true"

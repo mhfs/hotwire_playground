@@ -19,8 +19,8 @@ Requirements:
 - [x] Close drawer via X link that returns the previous URL without reloading.
 - [x] Close drawer on ESC.
 - [ ] Require confirmation before closing.
-  - [ ] Add confirm as a option to the drawer component.
-  - [ ] Customizable confirmation message.
+  - [x] Add confirm as a option to the drawer component.
+  - [x] Customizable confirmation message.
   - [x] Outlet for further control over confirmation requirement.
   - [ ] Use a prettier dialog?
 - [ ] Slot based drawer content (header/body/footer).

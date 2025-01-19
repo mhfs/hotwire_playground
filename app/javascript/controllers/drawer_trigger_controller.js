@@ -4,6 +4,8 @@ export default class extends Controller {
   static values = {
     advance: Boolean,
     size: String,
+    confirm: Boolean,
+    confirmMessage: String
   };
 
   open(e) {
@@ -25,6 +27,8 @@ export default class extends Controller {
     let container = content.querySelector('.drawer');
     let previousUrl = window.location.pathname + window.location.search;
     container.dataset.drawerPreviousUrlValue = previousUrl;
+    container.dataset.drawerConfirmValue = this.confirmValue;
+    container.dataset.drawerConfirmMessageValue = this.confirmMessageValue;
 
     // If advance was set on the link, set the turbo-frame to advance.
     if (this.advanceValue) {

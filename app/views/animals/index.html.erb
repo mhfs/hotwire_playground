@@ -1,6 +1,8 @@
 <h1>
   <%= link_to 'Animals', animals_path %>
-  [<%= link_to_drawer 'New', new_animal_path, advance: false %>]
+  [
+  <%= link_to_drawer 'New', new_animal_path, advance: false, confirm: true, confirm_message: 'Are you sure you stop creating a new animal?' %>
+  ]
 </h1>
 
 <table class="animals-table">

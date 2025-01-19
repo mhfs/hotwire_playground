@@ -1,6 +1,9 @@
 <div class="drawer"
      data-controller="drawer drawer-resize"
-     data-drawer-previous-url-value="<%= @previous_url %>">
+     data-drawer-previous-url-value="<%= @previous_url %>"
+     data-drawer-confirm-value="<%= @confirm %>"
+     data-drawer-confirm-message-value="<%= @confirm_message %>"
+     >
   <div class="overlay" data-action="click->drawer#close"></div>
   <div class="body <%= @size %>" data-drawer-resize-target="body">
     <div class="resize-handle"

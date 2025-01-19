@@ -2,11 +2,14 @@ import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
   static values = {
-    previousUrl: String
+    previousUrl: String,
+    confirm: Boolean,
+    confirmMessage: String
   }
 
   connect() {
     document.addEventListener("keydown", this.handleKeydown);
+    this.confirmation = this.confirmValue;
   }
 
   disconnect() {
@@ -27,8 +30,12 @@ export default class extends Controller {
     this.confirmation = false;
   }
 
+  confirmMessage() {
+    return this.confirmMessageValue || "Are you sure you want to close?";
+  }
+
   close() {
-    if (this.confirmation === true && !confirm("Are you sure you want to close?")) {
+    if (this.confirmation === true && !confirm(this.confirmMessage())) {
       return;
     }
 

@@ -1,4 +1,4 @@
-<%= render DrawerComponent.new(title: "Animal Details", size: @size, previous_url: animals_path) do %>
+<%= render DrawerComponent.new(title: "Animal Details", size: @size, previous_url: animals_path, confirm: true) do %>
   <div>
     <p><strong>ID:</strong> <%= @animal.id %></p>
     <p><strong>Name:</strong> <%= @animal.name %></p>
