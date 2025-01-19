@@ -3,6 +3,8 @@
 class DrawerComponent < ViewComponent::Base
   include Turbo::FramesHelper
 
+  renders_one :footer
+
   def initialize(title:, size: :medium, previous_url:, confirm: true, confirm_message: nil)
     @title = title
     @previous_url = previous_url

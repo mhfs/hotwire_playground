@@ -39,12 +39,10 @@
   background-color: #fff;
   box-shadow: -12px 0 15px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  padding: 20px;
-  overflow-y: auto; /* Ensures content is scrollable if needed */
-
-  min-width: 300px; /* Minimum width */
-  max-width: 80%; /* Maximum width */
-  resize: horizontal; /* Enable horizontal resizing */
+  overflow-y: hidden; /* Changed from auto to hidden */
+  min-width: 300px;
+  max-width: 80%;
+  resize: horizontal;
 }
 
 .drawer .body.small {
@@ -68,6 +66,7 @@
   cursor: ew-resize;
   background-color: #e0e0e0;
   transition: background-color 0.2s;
+  z-index: 1000;
 }
 
 .drawer .resize-handle:hover,
@@ -75,7 +74,6 @@
   background-color: #2196f3;
 }
 
-/* Prevent text selection while resizing */
 .drawer.resizing {
   user-select: none;
   -webkit-user-select: none;
@@ -84,7 +82,7 @@
 .drawer .content {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  height: 100vh;
   position: relative;
 }
 
@@ -98,6 +96,7 @@
   font-weight: bold;
   color: #333;
   cursor: pointer;
+  z-index: 2;
 }
 
 .drawer .close-button:hover {
@@ -110,6 +109,27 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent black */
-  z-index: 999; /* One layer below the drawer */
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+/* New styles for the drawer sections */
+.drawer-header {
+  flex-shrink: 0;
+  padding: 20px;
+  padding-right: 50px; /* Make room for close button */
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.drawer-footer {
+  flex-shrink: 0;
+  padding: 20px;
+  border-top: 1px solid #e0e0e0;
+  background-color: #fff;
 }

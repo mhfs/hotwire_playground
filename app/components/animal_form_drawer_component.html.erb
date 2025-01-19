@@ -1,5 +1,6 @@
-<%= render DrawerComponent.new(title: title, size: @size, previous_url: animals_path) do %>
+<%= render DrawerComponent.new(title: title, size: @size, previous_url: animals_path) do |drawer| %>
   <%= form_with(model: @animal,
+                id: 'animal-form',
                 data: {
                   controller: 'animal-form',
                   'animal-form-drawer-outlet': '.drawer',
@@ -36,10 +37,12 @@
         Click here to cancel confirmation!
       </a>
     </div>
-    <div>
+  <% end %>
 
-    <div class="actions">
-      <%= form.submit %>
+  <% drawer.with_footer do %>
+    <div class="footer">
+      <button form="animal-form">Save</button>
+      <button data-action="click->drawer#close">Cancel</button>
     </div>
   <% end %>
 <% end %>
