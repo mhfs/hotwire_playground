@@ -34,13 +34,17 @@ export default class extends Controller {
     return this.confirmMessageValue || "Are you sure you want to close?";
   }
 
-  close() {
-    if (this.confirmation === true && !confirm(this.confirmMessage())) {
-      return;
+  async close() {
+    // Check for confirmation if required
+    if (this.confirmation === true) {
+      const confirmed = await Turbo.config.forms.confirm(this.confirmMessage());
+      if (!confirmed) {
+        return; // Exit if the user cancels
+      }
     }
 
     // Finds the frame created by the drawer manager.
-    let container = this.element.closest('.drawer')
+    let container = this.element.closest('.drawer');
 
     // Restore the URL to its state before the drawer was opened.
     if (this.previousUrlValue) window.history.pushState({}, null, this.previousUrlValue);

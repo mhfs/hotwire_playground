@@ -18,11 +18,11 @@ Requirements:
 - [x] Make back/forward buttons work as expected.
 - [x] Close drawer via X link that returns the previous URL without reloading.
 - [x] Close drawer on ESC.
-- [ ] Require confirmation before closing.
+- [x] Require confirmation before closing.
   - [x] Add confirm as a option to the drawer component.
   - [x] Customizable confirmation message.
   - [x] Outlet for further control over confirmation requirement.
-  - [ ] Use a prettier dialog?
+  - [x] Use a custom dialog instead of browser confirm.
 - [ ] Slot based drawer content (header/body/footer).
 - [ ] Make in-drawer form functional.
   - Both new/edit.

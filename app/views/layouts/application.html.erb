@@ -20,5 +20,13 @@
     <template id="drawer-template">
       <%= render DrawerFrameComponent.new %>
     </template>
+
+    <dialog id="turbo-confirm">
+      <form method="dialog">
+        <p>Are you sure?</p>
+        <button value="confirm">Confirm</button>
+        <button value="cancel">Cancel</button>
+      </form>
+    </dialog>
   </body>
 </html>
