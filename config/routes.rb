@@ -9,13 +9,11 @@ Rails.application.routes.draw do
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
-  get "animals" => "animals#index", as: :animals
-  get "animals/:id(/:option)" => "animals#index", as: :animal, constraints: ->(req) { req.headers["Turbo-Frame"].blank? }
-  get "animals/new" => "animals#new", as: :new_animal
-  get "animals/:id/edit" => "animals#edit", as: :edit_animal
-  get "animals/:id" => "animals#show"
-  post "animals" => "animals#create"
-  patch "animals/:id" => "animals#update"
+  resources :animals, except: [ :destroy ] do
+    member do
+      get "(:option)", to: "animals#index", constraints: ->(req) { req.headers["Turbo-Frame"].blank? }, as: :option
+    end
+  end
 
   # Defines the root path route ("/")
   root "animals#index"
