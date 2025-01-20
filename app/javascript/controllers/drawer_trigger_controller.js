@@ -23,7 +23,8 @@ export default class extends Controller {
   }
 
   removeDrawers() {
-    if (Trusted.drawer) Trusted.drawer.close(true);
+    if (Trusted.drawer) Trusted.drawer.forceClose();
+
   }
 
   initDrawerFrame() {

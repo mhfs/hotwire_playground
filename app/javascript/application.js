@@ -19,5 +19,5 @@ Turbo.config.forms.confirm = (message, element) => {
 }
 
 Turbo.StreamActions.closeDrawer = function() {
-  Trusted.drawer.close(true)
-};
+  Trusted.drawer.forceClose();
+}

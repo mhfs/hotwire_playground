@@ -40,9 +40,14 @@ export default class extends Controller {
     return this.confirmMessageValue || "Are you sure you want to close?";
   }
 
-  async close(force = false) {
+  forceClose() {
+    this.resetConfirmation();
+    this.close();
+  }
+
+  async close() {
     // Check for confirmation if required
-    if (!force && this.confirmation === true) {
+    if (this.confirmation === true) {
       const confirmed = await Turbo.config.forms.confirm(this.confirmMessage());
       if (!confirmed) {
         return; // Exit if the user cancels
