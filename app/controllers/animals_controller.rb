@@ -27,7 +27,8 @@ class AnimalsController < ApplicationController
         if @animal.save
           render turbo_stream: [
             turbo_stream.close_drawer,
-            turbo_stream.prepend("animals-list", partial: "animal_row", locals: { animal: @animal })
+            turbo_stream.prepend("animals-list", partial: "animal_row", locals: { animal: @animal }),
+            turbo_stream.toast("Animal created!")
           ]
         else
           render(
