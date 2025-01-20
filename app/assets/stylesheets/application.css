@@ -134,19 +134,24 @@
   background-color: #fff;
 }
 
-.toast {
+#toasts {
   position: fixed;
-  bottom: 30px;
-  left: 30px;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 14px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  opacity: 1;
-  transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 1000;
+  bottom: 16px;
+  left: 16px;
+  display: flex;
+  flex-direction: column-reverse; /* Stacks from bottom to top */
+  gap: 8px;
+  z-index: 1000; /* Ensures visibility over other elements */
 }
 
+/* Style for individual toast notifications */
+.toast {
+  background-color: #fff; /* White background for a modern look */
+  color: #333; /* Dark text for contrast */
+  padding: 12px 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow for floating effect */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Discrete outline */
+  font-size: 14px;
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
