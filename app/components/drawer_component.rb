@@ -5,7 +5,7 @@ class DrawerComponent < ViewComponent::Base
 
   renders_one :footer
 
-  def initialize(title:, size: :medium, previous_url:, confirm: true, confirm_message: nil)
+  def initialize(title:, size: :medium, previous_url:, confirm: false, confirm_message: nil)
     @title = title
     @previous_url = previous_url
     @size = size
