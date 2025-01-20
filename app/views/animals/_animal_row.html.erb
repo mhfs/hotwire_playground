@@ -1,0 +1,10 @@
+<tr id="<%= dom_id(animal) %>">
+  <td><%= animal.id %></td>
+  <td>
+    <%= link_to_drawer animal.name, animal_path(animal), size: :large, advance: true %>
+  </td>
+  <td><%= animal.family %></td>
+  <td>
+    <%= link_to_drawer 'Edit', edit_animal_path(animal), advance: true %>
+  </td>
+</tr>

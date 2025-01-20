@@ -14,18 +14,9 @@
       <th>Actions</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody id="animals-list">
     <% @animals.each do |animal| %>
-      <tr>
-        <td><%= animal.id %></td>
-        <td>
-          <%= link_to_drawer animal.name, animal_path(animal), size: :large, advance: true %>
-        </td>
-        <td><%= animal.family %></td>
-        <td>
-          <%= link_to_drawer 'Edit', edit_animal_path(animal), advance: true %>
-        </td>
-      </tr>
+      <%= render 'animal_row', animal: animal %>
     <% end %>
   </tbody>
 </table>

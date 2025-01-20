@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get "animals/new" => "animals#new", as: :new_animal
   get "animals/:id/edit" => "animals#edit", as: :edit_animal
   get "animals/:id" => "animals#show"
+  post "animals" => "animals#create"
   patch "animals/:id" => "animals#update"
 
   # Defines the root path route ("/")

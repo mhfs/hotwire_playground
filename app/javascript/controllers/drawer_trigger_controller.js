@@ -23,7 +23,7 @@ export default class extends Controller {
   }
 
   removeDrawers() {
-    document.querySelectorAll('.drawer').forEach(element => element.remove());
+    if (Trusted.drawer) Trusted.drawer.close(true);
   }
 
   initDrawerFrame() {

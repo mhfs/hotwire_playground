@@ -9,6 +9,7 @@ export default class extends Controller {
 
   initialize() {
     this.handleKeydown = this.handleKeydown.bind(this);
+    Trusted.drawer = this;
   }
 
   connect() {
@@ -21,8 +22,8 @@ export default class extends Controller {
   }
 
   handleKeydown(event) {
-    event.preventDefault();
     if (event.key === "Escape" || event.keyCode === 27) {
+      event.preventDefault();
       this.close();
     }
   }
@@ -39,9 +40,9 @@ export default class extends Controller {
     return this.confirmMessageValue || "Are you sure you want to close?";
   }
 
-  async close() {
+  async close(force = false) {
     // Check for confirmation if required
-    if (this.confirmation === true) {
+    if (!force && this.confirmation === true) {
       const confirmed = await Turbo.config.forms.confirm(this.confirmMessage());
       if (!confirmed) {
         return; // Exit if the user cancels
