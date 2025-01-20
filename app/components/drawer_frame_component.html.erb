@@ -5,7 +5,7 @@
      data-drawer-confirm-message-value="<%= @confirm_message %>"
      >
   <div class="overlay" data-action="click->drawer#close"></div>
-  <div class="body <%= @size %>" data-drawer-resize-target="body">
+  <div class="<%= class_names 'body', @size, animate: @animate %>" data-drawer-resize-target="body">
     <div class="resize-handle"
          data-drawer-resize-target="handle"
          data-action="mousedown->drawer-resize#startResize"></div>
@@ -13,7 +13,9 @@
       <% if content.present? %>
         <%= content %>
       <% else %>
-        <p>Loading ...</p>
+        <div class="loading">
+          <p>Loading ...</p>
+        </div>
       <% end %>
     <% end %>
   </div>

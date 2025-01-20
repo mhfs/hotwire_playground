@@ -30,7 +30,7 @@ Requirements:
   - Probably turbo stream?
 - [x] Make drawer unique on trigger and set unique identifier.
 --- Ready for real world use ---
-- [ ] Animation on drawer trigger (but not on page load).
+- [x] Animation on drawer trigger (but not on page load).
 - [x] Make drawer resizable.
 - [x] Choose drawer size on trigger (small, medium, large).
 

@@ -49,6 +49,7 @@ export default class extends Controller {
     let body = content.querySelector('.body');
     body.classList.remove('small', 'medium', 'large');
     body.classList.add(this.sizeValue);
+    setTimeout(() => body.classList.add('open'), 1);
 
     // Append the drawer to the body with the loading state so that user
     // has immediate feedback on the click.

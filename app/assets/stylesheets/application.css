@@ -45,6 +45,15 @@
   resize: horizontal;
 }
 
+.drawer .body.animate {
+  transform: translateX(100%); /* Off-screen initially */
+  transition: transform 0.5s ease-in-out; /* Smooth transition */
+}
+
+.drawer .body.open {
+  transform: translateX(0); /* Slide in from the right */
+}
+
 .drawer .body.small {
   width: 300px;
 }
@@ -132,6 +141,12 @@
   padding: 20px;
   border-top: 1px solid #e0e0e0;
   background-color: #fff;
+}
+
+.drawer .loading {
+  margin-left: 20px;
+  margin-top: 20px;
+  color: #666; /* Adjust the color to fit your design */
 }
 
 #toasts {
