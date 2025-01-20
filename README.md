@@ -28,7 +28,7 @@ Requirements:
   - Both new/edit.
   - Do we need an custom stream action to close the drawer?
   - Probably turbo stream?
-- [ ] Make drawer unique on trigger and set unique identifier.
+- [x] Make drawer unique on trigger and set unique identifier.
 --- Ready for real world use ---
 - [ ] Animation on drawer trigger (but not on page load).
 - [x] Make drawer resizable.

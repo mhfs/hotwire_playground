@@ -12,11 +12,18 @@ export default class extends Controller {
     // Prevent the link navigation as we're going to handle it with Turbo below.
     e.preventDefault();
 
+    // Remove any existing drawers.
+    this.removeDrawers();
+
     // Clone the drawer template with proper setup into the DOM.
     this.initDrawerFrame();
 
     // Do this last so that frame initializes with previous url
     if (this.advanceValue) window.history.pushState({}, null, this.element.href);
+  }
+
+  removeDrawers() {
+    document.querySelectorAll('.drawer').forEach(element => element.remove());
   }
 
   initDrawerFrame() {
