@@ -51,7 +51,8 @@ class AnimalsController < ApplicationController
         if @animal.update(animal_params)
           render turbo_stream: [
             turbo_stream.close_drawer,
-            turbo_stream.replace(dom_id(@animal), partial: "animal_row", locals: { animal: @animal })
+            turbo_stream.replace(dom_id(@animal), partial: "animal_row", locals: { animal: @animal }),
+            turbo_stream.toast("Animal updated!")
           ]
         else
           render(
