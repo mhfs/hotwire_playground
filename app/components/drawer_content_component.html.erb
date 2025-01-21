@@ -1,0 +1,17 @@
+<div class="content">
+  <button class="close-button" data-action="click->drawer#close">&times;</button>
+
+  <div class="drawer-header">
+    <%= @title %>
+  </div>
+
+  <div class="drawer-body">
+    <%= content %>
+  </div>
+
+  <% if footer? %>
+    <div class="drawer-footer">
+      <%= footer %>
+    </div>
+  <% end %>
+</div>

@@ -1,19 +1,26 @@
-<%= wrap_in_turbo_frame do %>
-  <div class="content">
-    <button class="close-button" data-action="click->drawer#close">&times;</button>
-
-    <div class="drawer-header">
-      <%= @title %>
-    </div>
-
-    <div class="drawer-body">
-      <%= content %>
-    </div>
-
-    <% if footer? %>
-      <div class="drawer-footer">
-        <%= footer %>
-      </div>
+<div class="drawer"
+  data-controller="drawer drawer-resize"
+  data-drawer-previous-url-value="<%= @previous_url %>"
+  data-drawer-confirm-value="<%= @confirm %>"
+  data-drawer-confirm-message-value="<%= @confirm_message %>">
+  <div class="overlay" data-action="click->drawer#close"></div>
+  <div class="<%= drawer_classes %>" data-drawer-resize-target="body">
+    <div class="resize-handle"
+      data-drawer-resize-target="handle"
+      data-action="mousedown->drawer-resize#startResize"></div>
+    <%= turbo_frame_tag 'drawer-frame' do %>
+      <% if content.present? %>
+        <%= render DrawerContentComponent.new(title: @title) do |drawer| %>
+          <%= content %>
+          <% drawer.with_footer do %>
+            <%= footer if footer %>
+          <% end %>
+        <% end %>
+      <% else %>
+        <div class="loading">
+          <p>Loading ...</p>
+        </div>
+      <% end %>
     <% end %>
   </div>
-<% end %>
+</div>
