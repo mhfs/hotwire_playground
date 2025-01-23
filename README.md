@@ -149,3 +149,4 @@ Known Issues:
 - [x] No user feedback when drawer is opening and taking too long.
 - [x] Drawer close with window.history.back breaks when opening drawer via link.
 - [x] "</div> </div>" bug when reloading with open drawer.
+- [ ] Back buttom is broken from open drawer.
